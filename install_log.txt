@@ -1,0 +1,77 @@
+This script will create a Python virtual environment using Micromamba.
+Ensure that Micromamba is properly installed.
+Do you want to proceed? (Y/n): Enter the Python version (e.g., 3.8): Enter environment name (Press ENTER for default '.venv'): 
+Transaction
+
+  Prefix: C:\Users\lunde\repos\udemy_by_number\andy_pandas_2831952\.venv
+
+  Updating specs:
+
+   - python=3.11
+
+
+  Package                 Version  Build               Channel           Size
+-------------------------------------------------------------------------------
+  Install:
+-------------------------------------------------------------------------------
+
+  + ucrt             10.0.22621.0  h57928b3_0          conda-forge     Cached
+  + libexpat                2.6.1  h63175ca_0          conda-forge     Cached
+  + ca-certificates      2024.2.2  h56e8100_0          conda-forge     Cached
+  + vc14_runtime      14.38.33130  h82b7239_18         conda-forge     Cached
+  + vs2015_runtime    14.38.33130  hcb4865c_18         conda-forge     Cached
+  + vc                       14.3  hcf57466_18         conda-forge     Cached
+  + tk                     8.6.13  h5226925_1          conda-forge     Cached
+  + libzlib                1.2.13  hcfcfb64_5          conda-forge     Cached
+  + libffi                  3.4.2  h8ffe710_5          conda-forge     Cached
+  + bzip2                   1.0.8  hcfcfb64_5          conda-forge     Cached
+  + openssl                 3.2.1  hcfcfb64_0          conda-forge     Cached
+  + libsqlite              3.45.1  hcfcfb64_0          conda-forge     Cached
+  + xz                      5.2.6  h8d14728_0          conda-forge     Cached
+  + tzdata                  2024a  h0c530f3_0          conda-forge     Cached
+  + python                 3.11.8  h2628c8c_0_cpython  conda-forge     Cached
+  + wheel                  0.42.0  pyhd8ed1ab_0        conda-forge     Cached
+  + setuptools             69.1.1  pyhd8ed1ab_0        conda-forge     Cached
+  + pip                      24.0  pyhd8ed1ab_0        conda-forge     Cached
+
+  Summary:
+
+  Install: 18 packages
+
+  Total download: 0 B
+
+-------------------------------------------------------------------------------
+
+
+Confirm changes: [Y/n] 
+Transaction starting
+Linking ucrt-10.0.22621.0-h57928b3_0
+Linking libexpat-2.6.1-h63175ca_0
+Linking ca-certificates-2024.2.2-h56e8100_0
+Linking vc14_runtime-14.38.33130-h82b7239_18
+Linking vs2015_runtime-14.38.33130-hcb4865c_18
+Linking vc-14.3-hcf57466_18
+Linking tk-8.6.13-h5226925_1
+Linking libzlib-1.2.13-hcfcfb64_5
+Linking libffi-3.4.2-h8ffe710_5
+Linking bzip2-1.0.8-hcfcfb64_5
+Linking openssl-3.2.1-hcfcfb64_0
+Linking libsqlite-3.45.1-hcfcfb64_0
+Linking xz-5.2.6-h8d14728_0
+Linking tzdata-2024a-h0c530f3_0
+Linking python-3.11.8-h2628c8c_0_cpython
+Linking wheel-0.42.0-pyhd8ed1ab_0
+Linking setuptools-69.1.1-pyhd8ed1ab_0
+Linking pip-24.0-pyhd8ed1ab_0
+
+Transaction finished
+
+To activate this environment, use:
+
+    micromamba activate C:\Users\lunde\repos\udemy_by_number\andy_pandas_2831952\.venv
+
+Or to execute a single command in this environment, use:
+
+    micromamba run -p C:\Users\lunde\repos\udemy_by_number\andy_pandas_2831952\.venv mycommand
+
+Environment '.venv' with Python 3.11 has been created successfully.
