@@ -1,7 +1,7 @@
 import numpy as np
 import pandas as pd
 
-def calculate_optimal_bins(df: pd.DataFrame) -> pd.DataFrame:
+def calculate_binsize_for_columns(df: pd.DataFrame) -> pd.DataFrame:
     """
     * Name:
     *    calculate_optimal_bins
@@ -18,10 +18,7 @@ def calculate_optimal_bins(df: pd.DataFrame) -> pd.DataFrame:
     *    DataFrame with columns names, bin sizes, and type (Continuous or Discrete)
     *
     * Description:
-    *        Calculates the optimal bin size for each numerical column
-    *        in a dataframe for the purpose of creating histograms.
-    *        Utilizes the Freedman-Diaconis rule for continuous data and
-    *        unique count for discrete data.
+    *    Optimize bin sizes for histograms
     *
     * Parameters:
     *     df (pd.DataFrame): DataFrame with numerical columns for bin size calculation.
@@ -32,6 +29,13 @@ def calculate_optimal_bins(df: pd.DataFrame) -> pd.DataFrame:
     * Example:
     *    Input: DataFrame with 'Age' and 'Salary' columns
     *    Output: DataFrame with calculated bin sizes for 'Age' and 'Salary'
+    *
+    *    bin_size_fnc = load_function('calculate_binsize_for_columns_fnc', 'calculate_binsize_for_columns')
+    *    if bin_size_fnc:
+    *        binsize_df = bin_size_fnc(df)
+    *        display(binsize_df)
+    *    else:
+    *        print('Sorry, could not calculate the bin size for the dataset.')
     *
     """
     bin_sizes = []  # List to store bin size information
@@ -45,9 +49,9 @@ def calculate_optimal_bins(df: pd.DataFrame) -> pd.DataFrame:
             bin_size = data.nunique()  # Use unique value count as bin size
         else:
             bin_type = 'Continuous'
-            q75, q25 = np.percentile(data, [75, 25])  # Calculate 25th and 75th percentiles
-            iqr = q75 - q25  # Interquartile range
-            bin_width = 2 * (iqr) / (len(data) ** (1 / 3))  # Apply Freedman-Diaconis Rule
+            percentile_75, percentile_25 = np.percentile(data, [75, 25])  # Calculate 25th and 75th percentiles
+            interquartile_range = percentile_75 - percentile_25  # Interquartile range
+            bin_width = 2 * (interquartile_range) / (len(data) ** (1 / 3))  # Apply Freedman-Diaconis Rule
             bin_size = int((data.max() - data.min()) / bin_width)  # Calculate bin size
             bin_size = max(1, bin_size)  # Ensure at least 1 bin
         bin_sizes.append({'Column': column, 'Bin Size': bin_size, 'Type': bin_type})
